@@ -28,7 +28,7 @@ namespace APIFun.Controllers
         {
             var rng = new Random();
 
-            this._logger.LogDebug("thanks for your request");
+            this._logger.LogInformation("thanks for your request");
 
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
@@ -37,6 +37,12 @@ namespace APIFun.Controllers
                 Summary = Summaries[rng.Next(Summaries.Length)]
             })
             .ToArray();
+        }
+
+        [HttpGet("error")]
+        public void Error()
+        {
+            throw new Exception("it was bad");
         }
     }
 }
