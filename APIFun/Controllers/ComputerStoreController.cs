@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using APIFun.Domain.ComputerStore.Interfaces;
 using APIFun.Domain.ComputerStore.Models;
@@ -47,6 +48,12 @@ namespace APIFun.Controllers
 			await this.computerStoreRepository.SaveChangesAsync();
 
 			return cableCompany;
+		}
+
+		[HttpGet("error")]
+		public void Error()
+		{
+			throw new Exception("it was bad");
 		}
 	}
 }

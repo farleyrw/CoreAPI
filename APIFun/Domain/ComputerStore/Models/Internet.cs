@@ -11,11 +11,13 @@ namespace APIFun.Domain.ComputerStore.Models
 		[Key]
 		public int Id { get; set; }
 
+		[Required]
 		public int ProviderId { get; set; }
 
 		[ForeignKey("ProviderId")]
 		public CableCompany CableCompany { get; set; }
 
+		[Required]
 		public int Speed { get; set; }
 
 		public string AddUser { get; set; }
